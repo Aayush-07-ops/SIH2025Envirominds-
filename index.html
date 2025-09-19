@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Harvesting Made Easy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>WATER HARVESTING</h1>
+                <div class="language-selector">
+                    <select id="language">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h2>Water Harvesting Made Easy</h2>
+                    <div class="weather-icon">
+                        <div class="cloud">☁️</div>
+                        <div class="raindrop">💧</div>
+                        <div class="rain">☔</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculator-section">
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="roofArea">Roof Area</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="roofArea" placeholder="0" min="0" step="0.1">
+                            <span class="unit">m²</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="openSpace">Open Space</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="openSpace" placeholder="0" min="0" step="0.1">
+                            <span class="unit">m²</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="soilType">Soil Type</label>
+                        <select id="soilType">
+                            <option value="sandy">Sandy</option>
+                            <option value="loamy">Loamy</option>
+                            <option value="clayey">Clayey</option>
+                        </select>
+                    </div>
+                    
+            
+
+                    <div class="input-group">
+                        <label for="location">Location</label>
+                        <div class="location-wrapper">
+                            <input type="text" id="location" placeholder="Enter location" readonly>
+                            <button id="autoFetch" class="auto-fetch-btn">
+                                📍 Auto Fetch
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="automatic-section">
+                        <h3>Automatic Detected</h3>
+                        <div class="auto-data">
+                            <div class="auto-item">
+                                <span class="label">Rainfall</span>
+                                <span class="value" id="rainfall">-- mm/yr</span>
+                            </div>
+                            <div class="auto-item">
+                                <span class="label">Aquifer Presence</span>
+                                <span class="value" id="aquifer">--</span>
+                            </div>
+                            <div class="auto-item">
+                                <span class="label">Groundwater Depth</span>
+                                <span class="value" id="groundwater">-- m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <div class="water-volume-card">
+                        <h3>Water volume</h3>
+                        <div class="volume-display">
+                            <span class="volume-icon">💧</span>
+                            <span class="volume-number" id="waterVolume">0</span>
+                        </div>
+                        <span class="volume-unit">liters/year</span>
+                    </div>
+
+                    <div class="recommendations-card">
+                        <h3>Recommendations</h3>
+                        <div class="recommendation-item">
+                            <span class="rec-label">Recharge Structure</span>
+                            <span class="rec-value" id="rechargeStructure">--</span>
+                        </div>
+                        <div class="recommendation-item">
+                            <span class="rec-label">Dimensions</span>
+                            <span class="rec-value" id="dimensions">--</span>
+                        </div>
+                        <div class="cost-benefit">
+                            <button id="costBenefitBtn">Cost Benefit Analysis Summary</button>
+                        </div>
+                    </div>
+
+                    <div class="well-illustration">
+                        <div class="well">
+                            <div class="well-top"></div>
+                            <div class="well-body"></div>
+                            <div class="well-water"></div>
+                        </div>
+                        <div class="plants">
+                            <div class="plant plant1">🌿</div>
+                            <div class="plant plant2">🌱</div>
+                            <div class="plant plant3">🍃</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <button id="downloadBtn" class="download-btn">
+                    📥 Download Report (PDF)
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Cost Benefit Modal -->
+    <div id="costBenefitModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cost Benefit Analysis Summary</h2>
+            <div id="costBenefitContent">
+                <div class="analysis-item">
+                    <span class="analysis-label">Initial Investment:</span>
+                    <span class="analysis-value" id="initialCost">Rs0</span>
+                </div>
+                <div class="analysis-item">
+                    <span class="analysis-label">Annual Water Savings:</span>
+                    <span class="analysis-value" id="annualSavings">Rs0</span>
+                </div>
+                <div class="analysis-item">
+                    <span class="analysis-label">Payback Period:</span>
+                    <span class="analysis-value" id="paybackPeriod">0 years</span>
+                </div>
+                <div class="analysis-item">
+                    <span class="analysis-label">20-year ROI:</span>
+                    <span class="analysis-value" id="roi">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

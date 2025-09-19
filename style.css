@@ -1,0 +1,625 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    margin-bottom: 30px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d3748;
+    letter-spacing: 2px;
+}
+
+.language-selector select {
+    padding: 8px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    font-size: 16px;
+    color: #4a5568;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.language-selector select:focus {
+    border-color: #4299e1;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.weather-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 40px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Calculator Section */
+.calculator-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Input Section */
+.input-section {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+.input-type label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a5568;
+    font-size: 16px;
+}
+.solidType{
+        width: 100%;
+    font-size: 16px;
+    padding: 15px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(226, 232, 240);
+    border-image: initial;
+    border-radius: 12px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}   
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a5568;
+    font-size: 16px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+.input-wrapper input:focus {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.input-wrapper .unit {
+    position: absolute;
+    right: 15px;
+    color: #718096;
+    font-weight: 500;
+    background: #f7fafc;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.location-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.location-wrapper input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #f7fafc;
+}
+
+.auto-fetch-btn {
+    padding: 15px 20px;
+    background: #4299e1;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.auto-fetch-btn:hover {
+    background: #3182ce;
+    transform: translateY(-2px);
+}
+
+/* Automatic Section */
+.automatic-section {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px solid #e2e8f0;
+}
+
+.automatic-section h3 {
+    color: #4a5568;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.auto-data {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auto-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.auto-item .label {
+    color: #718096;
+    font-weight: 400;
+}
+
+.auto-item .value {
+    color: #4299e1;
+    font-weight: 600;
+}
+
+/* Results Section */
+.results-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.water-volume-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.water-volume-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: ripple 4s infinite;
+}
+
+@keyframes ripple {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+.water-volume-card h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+.volume-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.volume-icon {
+    font-size: 40px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.volume-number {
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.volume-unit {
+    font-size: 14px;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.recommendations-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-card h3 {
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.recommendation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.recommendation-item:last-of-type {
+    border-bottom: none;
+}
+
+.rec-label {
+    color: #718096;
+    font-weight: 400;
+}
+
+.rec-value {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.cost-benefit {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #e2e8f0;
+}
+
+#costBenefitBtn {
+    width: 100%;
+    padding: 12px;
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    color: #4a5568;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#costBenefitBtn:hover {
+    background: #edf2f7;
+    border-color: #4299e1;
+    color: #4299e1;
+}
+
+/* Well Illustration */
+.well-illustration {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 30px;
+    background: linear-gradient(to bottom, #e6fffa 0%, #b2f5ea 100%);
+    border-radius: 20px;
+    position: relative;
+    min-height: 200px;
+}
+
+.well {
+    position: relative;
+    z-index: 2;
+}
+
+.well-top {
+    width: 80px;
+    height: 20px;
+    background: #8b5a2b;
+    border-radius: 40px 40px 0 0;
+    position: relative;
+}
+
+.well-top::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 15px;
+    background: #654321;
+    border-radius: 30px;
+}
+
+.well-body {
+    width: 60px;
+    height: 60px;
+    background: #a0522d;
+    margin: 0 auto;
+    border-radius: 0 0 30px 30px;
+    position: relative;
+}
+
+.well-water {
+    width: 50px;
+    height: 40px;
+    background: linear-gradient(to bottom, #4299e1 0%, #2b6cb0 100%);
+    margin: -35px auto 0;
+    border-radius: 0 0 25px 25px;
+    animation: waterLevel 3s ease-in-out infinite alternate;
+}
+
+@keyframes waterLevel {
+    0% { height: 30px; margin-top: -25px; }
+    100% { height: 50px; margin-top: -45px; }
+}
+
+.plants {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.plant {
+    position: absolute;
+    font-size: 24px;
+    animation: sway 4s ease-in-out infinite;
+}
+
+.plant1 {
+    bottom: 20px;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.plant2 {
+    bottom: 30px;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+.plant3 {
+    bottom: 15px;
+    left: 60%;
+    animation-delay: 2s;
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+/* Download Section */
+.download-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.download-btn {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #2d3748;
+}
+
+.modal-content h2 {
+    margin-bottom: 25px;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.analysis-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.analysis-item:last-child {
+    border-bottom: none;
+}
+
+.analysis-label {
+    color: #718096;
+    font-weight: 400;
+}
+
+.analysis-value {
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .hero-text h2 {
+        font-size: 36px;
+    }
+    
+    .calculator-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .location-wrapper {
+        flex-direction: column;
+    }
+    
+    .auto-fetch-btn {
+        width: 100%;
+    }
+    
+    .volume-number {
+        font-size: 36px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h2 {
+        font-size: 28px;
+    }
+    
+    .input-section,
+    .recommendations-card,
+    .water-volume-card {
+        padding: 20px;
+    }
+    
+    .weather-icon {
+        font-size: 30px;
+        gap: 10px;
+    }
+}
